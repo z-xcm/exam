@@ -18,7 +18,7 @@ public class List {
 	 * @fn : input
 	 * @brief : 시계상품 등록 
 	 * @details : JSON 을 사용하여 각각 해당하는 입력값을 받고 리스트에 덮어쓰기 형식
-	 * @author : 이우람(kodaedod@gmail.com)
+	 * @author : 박민지(zxcm0010@gmail.com)
 	 * @date : 2021-06-10 (11시33분)
 	 * @param :   id = 상품 id ,productName = 상품 이름, price = 상품의 가격, amount = 상품 수량
 	 */
