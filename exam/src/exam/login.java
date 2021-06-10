@@ -1,3 +1,17 @@
+/** 
+ @fn login
+ @brief 함수의 설명 (What) 이름 설정
+ @details 동작과정 설명 (How) name 변수에 이름 설정
+ @author Name(Name@tistory.com) (Who) 남수만(sumannam@gmail.com)
+ @date 함수 생성 날짜 (When)
+ @return 리턴값에 대한설명(type 상품의 이름)
+ @param 함수의 인자 설명(name: 상품의 이름)
+ @remark  수정이유[작성자; 날짜2]
+					필요성[작성자; 날짜1] (Why)
+*/
+
+
+
 package exam;
 
 	
