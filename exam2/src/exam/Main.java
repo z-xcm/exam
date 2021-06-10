@@ -18,13 +18,13 @@ public class Main {
 		
 		while (true) {
 			System.out.println("-------------------");
-			System.out.println("ì‡¼í•‘ëª°(ì‚¬ìš©ìëª¨ë“œ)");
-			System.out.println("1. ìƒí’ˆ ëª©ë¡");
-			System.out.println("2. ì¥ë°”êµ¬ë‹ˆ");
-			System.out.println("3. ê´€ë¦¬ì ëª¨ë“œ");
-			System.out.println("4. ì¢…ë£Œ");
+			System.out.println("¼îÇÎ¸ô(»ç¿ëÀÚ¸ğµå)");
+			System.out.println("1. »óÇ° ¸ñ·Ï");
+			System.out.println("2. Àå¹Ù±¸´Ï");
+			System.out.println("3. °ü¸®ÀÚ ¸ğµå");
+			System.out.println("4. Á¾·á");
 			System.out.println("--------------------");
-			System.out.println(" ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+			System.out.println(" ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
 			
 			menu = scanner.nextInt();
 			switch (menu) {
@@ -39,13 +39,13 @@ public class Main {
 					
 					while(cartMenu != 4) {
 						System.out.println("--------------------");
-						System.out.println("ì¥ë°”êµ¬ë‹ˆ");
-						System.out.println("1. ìƒí’ˆì¶”ê°€");
-						System.out.println("2. ìƒí’ˆ ëª©ë¡");
-						System.out.println("3. ìƒí’ˆ ì‚­ì œ");
-						System.out.println("4. ì‚¬ìš©ìëª¨ë“œ");
+						System.out.println("Àå¹Ù±¸´Ï");
+						System.out.println("1. »óÇ°Ãß°¡");
+						System.out.println("2. »óÇ° ¸ñ·Ï");
+						System.out.println("3. »óÇ° »èÁ¦");
+						System.out.println("4. »ç¿ëÀÚ¸ğµå");
 						System.out.println("--------------------");
-						System.out.print(" ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+						System.out.print(" ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
 						
 						cartMenu = scanner.nextInt();
 						switch (cartMenu) {
@@ -75,14 +75,14 @@ public class Main {
 					
 					while(adminMenu != 4) {
 						System.out.println("--------------------");
-						System.out.println(" ì‡¼í•‘ëª° (ê´€ë¦¬ìëª¨ë“œ)");
-						System.out.println("1. ìƒí’ˆ ì¶”ê°€");
-						System.out.println("2. ìƒí’ˆ ëª©ë¡");
-						System.out.println("3. ìƒí’ˆ ì‚­ì œ");
-						System.out.println("4. ì‚¬ìš©ì ëª¨ë“œ");
-						System.out.println("5. ì‹œìŠ¤í…œ ì¢…ë£Œ");
+						System.out.println(" ¼îÇÎ¸ô (°ü¸®ÀÚ¸ğµå)");
+						System.out.println("1. »óÇ° Ãß°¡");
+						System.out.println("2. »óÇ° ¸ñ·Ï");
+						System.out.println("3. »óÇ° »èÁ¦");
+						System.out.println("4. »ç¿ëÀÚ ¸ğµå");
+						System.out.println("5. ½Ã½ºÅÛ Á¾·á");
 						System.out.println("--------------------");
-						System.out.print("ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+						System.out.print("¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
 						
 
 						adminMenu = scanner.nextInt();
@@ -104,19 +104,19 @@ public class Main {
 							break;
 						
 						case 5:
-							System.out.println("ì‹œìŠ¤í…œì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+							System.out.println("½Ã½ºÅÛÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
 							System.exit(0);
 							break;
 						}
 					}
 					break;
 				case 4:
-					System.out.println("ì‹œìŠ¤í…œì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.println("½Ã½ºÅÛÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
 					System.exit(0);
 					break;
 					
-				default: // ï¿½ï¿½ï¿½ï¿½
-					System.out.println("ìœ íš¨í•œ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”.");
+				default: // 
+					System.out.println("À¯È¿ÇÑ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
 					break;
 			}
 		}

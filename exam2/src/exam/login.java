@@ -9,7 +9,7 @@ package exam;
 	import java.math.*;
 
 	public class login {
-	   //saltìƒì„±
+	   //salt»ı¼º
 	    public static String Salt() {
 	         
 	         String salt="";
@@ -43,57 +43,57 @@ package exam;
 	      return hex;
 	   }
 	   
-	    //íšŒì›ê°€ì…
+	    //È¸¿ø°¡ÀÔ
 	    public void login(String[] args) {
 	       Scanner scan = new Scanner(System.in);
 	       
 	        int num = 0;
 	        
-	        System.out.println("-----íšŒì› ê°€ì…-----");
-	        System.out.println("id ì…ë ¥ :");
+	        System.out.println("-----È¸¿ø °¡ÀÔ-----");
+	        System.out.println("id ÀÔ·Â :");
 	        String id = scan.nextLine();
 	        
-	        System.out.println("pw ì…ë ¥ :");
+	        System.out.println("pw ÀÔ·Â :");
 	        String pw = scan.nextLine();
 	        
-	        //saltê°’ ìƒì„±
+	        //salt°ª »ı¼º
 	        String salt = Salt();
-	        System.out.println("(salt ìƒì„± ì™„ë£Œ="+salt+")");
+	        System.out.println("(salt »ı¼º ¿Ï·á="+salt+")");
 	        
 	        
-	        //ì•”í˜¸í™”
+	        //¾ÏÈ£È­
 	        String pw_encrypt = SHA512(pw, salt);
-	        System.out.println("(ì•”í˜¸í™”ëœ ë¹„ë°€ë²ˆí˜¸ì´ì dbì— ì €ì¥ë  ë¬¸ìì—´="+pw_encrypt+")");
+	        System.out.println("(¾ÏÈ£È­µÈ ºñ¹Ğ¹øÈ£ÀÌÀÚ db¿¡ ÀúÀåµÉ ¹®ÀÚ¿­="+pw_encrypt+")");
 	      
 	         
-	        System.out.println("-----ê°€ì… ì™„ë£Œ-----");
+	        System.out.println("-----°¡ÀÔ ¿Ï·á-----");
 	        boolean go = true;
 	       
-	        System.out.println("-----ë¡œ ê·¸ ì¸-----");
-	        System.out.println("id ì…ë ¥ :");
+	        System.out.println("-----·Î ±× ÀÎ-----");
+	        System.out.println("id ÀÔ·Â :");
 	        String id_input = scan.nextLine();
 	          
 	           while(go) {
 	              
 	              if(id.equals(id_input)) {
-	                 System.out.println("pw ì…ë ¥ :");
+	                 System.out.println("pw ÀÔ·Â :");
 	                 String pw_input = scan.nextLine();
 	               
-	                 //ë³µí˜¸í™”
+	                 //º¹È£È­
 	                 String pw_decrypt = SHA512(pw_input, salt);
 	                 
 	                 if( pw_decrypt.equals(pw_encrypt)) {
-	                    System.out.println("-----"+id+"ë‹˜ ë¡œê·¸ì¸ ì„±ê³µ-----");
-	                    go = false;//whileë¬¸ ë‚˜ê°€ê¸°
+	                    System.out.println("-----"+id+"´Ô ·Î±×ÀÎ ¼º°ø-----");
+	                    go = false;//while¹® ³ª°¡±â
 	                
 	                 }else {
 	                    num++;
-	                    System.out.println("-----ë¹„ë°€ë²ˆí˜¸ í‹€ë¦¼. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”-----"+num+"íšŒ ì‹œë„");
+	                    System.out.println("-----ºñ¹Ğ¹øÈ£ Æ²¸². ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä-----"+num+"È¸ ½Ãµµ");
 	                 }
 	                 
 	              }else {
-	                 System.out.println("---- ì—†ëŠ” ì•„ì´ë”” ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”");
-	                 System.out.println("id ì…ë ¥ :");
+	                 System.out.println("---- ¾ø´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	                 System.out.println("id ÀÔ·Â :");
 	                 id_input = scan.nextLine();
 	                 
 	              }
