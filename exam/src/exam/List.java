@@ -15,24 +15,24 @@ public class List {
 	public static void input() {
 		JSONObject watch = new JSONObject();
 		
-		// »óÇ° Á¤º¸ ÀÔ·Â
+		// ìƒí’ˆ ì •ë³´ ì…ë ¥
 		
-        System.out.println("id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+        System.out.println("idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
         watch.put("id", scanner.next());
 		
-        System.out.println("»óÇ°¸í ÀÔ·Â");
+        System.out.println("ìƒí’ˆëª… ì…ë ¥");
 		watch.put("productName", scanner.next());
 		
-		 System.out.println("°¡°İÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		 System.out.println("ê°€ê²©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	        watch.put("price", scanner.nextInt());
 	        
-	        System.out.println("¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	        System.out.println("ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	        watch.put("amount", scanner.nextInt());
 	        
-	        // JSONArray¿¡ »óÇ° Á¤º¸°¡ ÀÔ·ÂµÈ JSONObject ÀÔ·Â
+	        // JSONArrayì— ìƒí’ˆ ì •ë³´ê°€ ì…ë ¥ëœ JSONObject ì…ë ¥
 	        array.add(watch);
 
-	        // json ÆÄÀÏ¿¡ ¾²±â
+	        // json íŒŒì¼ì— ì“°ê¸°
 	        try {
 	           FileWriter file = new FileWriter("product_list.json", false);
 	           file.write(array.toJSONString());
@@ -47,23 +47,23 @@ public class List {
 
 		public static void output() {
 		      try {
-		    	  // json ÆÄÀÏ ÀĞ±â
+		    	  // json íŒŒì¼ ì½ê¸°
 		    	  Object object = parser.parse(new FileReader("product_list.json"));
 		    	  
-		    	  // Object¿¡¼­ JSONArray·Î º¯°æ
+		    	  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 		    	  array = (JSONArray) object;
 		    	  
-		    	  // for¹®À¸·Î ÀüÃ¼ »óÇ° ¸ñ·Ï Ãâ·Â
+		    	  // forë¬¸ìœ¼ë¡œ ì „ì²´ ìƒí’ˆ ëª©ë¡ ì¶œë ¥
 		    	  for (int i=0; i<array.size(); i++) {
 			            JSONObject obj = (JSONObject) array.get(i);
-			            System.out.print("¾ÆÀÌµğ: " + obj.get("id") + "\t");
-			            System.out.print("ÀÌ¸§: " + obj.get("productName") + "\t");
-			            System.out.print("°¡°İ: " + obj.get("price") + "\t");
-			            System.out.println("¼ö·®: " + obj.get("amount") + "\t");
+			            System.out.print("ì•„ì´ë””: " + obj.get("id") + "\t");
+			            System.out.print("ì´ë¦„: " + obj.get("productName") + "\t");
+			            System.out.print("ê°€ê²©: " + obj.get("price") + "\t");
+			            System.out.println("ìˆ˜ëŸ‰: " + obj.get("amount") + "\t");
 			         }
 			         
 			      }
-		      // ¿¹¿Ü Ã³¸®
+		      // ì˜ˆì™¸ ì²˜ë¦¬
 		      catch (FileNotFoundException e) { e.printStackTrace(); } 
 		      catch (IOException e) { e.printStackTrace(); } 
 		      catch (ParseException e) { e.printStackTrace(); }
@@ -72,23 +72,23 @@ public class List {
 
 		public static void delete() {
 			try {
-				  // json ÆÄÀÏ ÀĞ±â
+				  // json íŒŒì¼ ì½ê¸°
 				  Object object = parser.parse(new FileReader("product_list.json"));
 				  
-				  // Object¿¡¼­ JSONArray·Î º¯°æ
+				  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 				  array = (JSONArray) object;
 				  
-				  // »èÁ¦ÇÒ »óÇ°ÀÇ id ÀÔ·Â
-				  System.out.println("»èÁ¦ÇÒ »óÇ°ÀÇ id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				  // ì‚­ì œí•  ìƒí’ˆì˜ id ì…ë ¥
+				  System.out.println("ì‚­ì œí•  ìƒí’ˆì˜ idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				  String productId = scanner.next();
 				  
-				  // for¹®À¸·Î ÀüÃ¼ Å½»öÇÏ¿© ÀÔ·Â¹ŞÀº id¿Í ÀÏÄ¡ÇÏ´Â »óÇ° Á¦°Å
+				  // forë¬¸ìœ¼ë¡œ ì „ì²´ íƒìƒ‰í•˜ì—¬ ì…ë ¥ë°›ì€ idì™€ ì¼ì¹˜í•˜ëŠ” ìƒí’ˆ ì œê±°
 				  for (int i=0; i<array.size(); i++) {
 					  JSONObject obj = (JSONObject) array.get(i);
 					  if(obj.get("id").equals(productId)) {
-						  System.out.println(obj.get("productName") + " »óÇ°ÀÌ Á¦°ÅµÇ¾ú½À´Ï´Ù.");
+						  System.out.println(obj.get("productName") + " ìƒí’ˆì´ ì œê±°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 						  array.remove(i);
-						  // json ÆÄÀÏ¿¡ ÀúÀå
+						  // json íŒŒì¼ì— ì €ì¥
 						  try {
 					           FileWriter file = new FileWriter("product_list.json", false);
 					           file.write(array.toJSONString());
@@ -101,7 +101,7 @@ public class List {
 					  }
 				  }
 			  }
-			  // ¿¹¿Ü Ã³¸®
+			  // ì˜ˆì™¸ ì²˜ë¦¬
 			catch (FileNotFoundException e) { e.printStackTrace(); } 
 			catch (IOException e) { e.printStackTrace(); } 
 			catch (ParseException e) { e.printStackTrace(); }
