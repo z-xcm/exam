@@ -80,6 +80,7 @@ public class Main {
 						System.out.println("2. 상품 목록");
 						System.out.println("3. 상품 삭제");
 						System.out.println("4. 사용자 모드");
+						System.out.println("5. 시스템 종료");
 						System.out.println("--------------------");
 						System.out.print("번호를 입력하세요 : ");
 						
@@ -100,6 +101,11 @@ public class Main {
 							break;
 							
 						case 4:
+							break;
+						
+						case 5:
+							System.out.println("시스템이 종료되었습니다.");
+							System.exit(0);
 							break;
 						}
 					}
