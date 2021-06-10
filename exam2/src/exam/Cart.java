@@ -17,32 +17,32 @@ public class Cart {
 
 	public static void input() {
 		try {
-			  // json ÆÄÀÏ ÀĞ±â
+			  // json íŒŒì¼ ì½ê¸°
 			  Object object = parser.parse(new FileReader("product_list.json"));
 			  
-			  // Object¿¡¼­ JSONArray·Î º¯°æ
+			  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 			  array = (JSONArray) object;
 			  
-			  // Àå¹Ù±¸´Ï¿¡ Ãß°¡ÇÒ »óÇ°ÀÇ ÀÌ¸§ ÀÔ·Â
-			  System.out.println("Àå¹Ù±¸´Ï¿¡ Ãß°¡ÇÒ »óÇ°ÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			  // ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€í•  ìƒí’ˆì˜ ì´ë¦„ ì…ë ¥
+			  System.out.println("ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€í•  ìƒí’ˆì˜ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			  String name = scanner.next();
 			  
-			  // for¹®À¸·Î ÀüÃ¼ Å½»öÇÏ¿© ÀÔ·Â¹ŞÀº ÀÌ¸§ÀÇ »óÇ° Ã£±â
+			  // forë¬¸ìœ¼ë¡œ ì „ì²´ íƒìƒ‰í•˜ì—¬ ì…ë ¥ë°›ì€ ì´ë¦„ì˜ ìƒí’ˆ ì°¾ê¸°
 			  for (int i=0; i<array.size(); i++) {
 				  JSONObject obj = (JSONObject) array.get(i);
 				  
 				  if(obj.get("productName").equals(name)) {
 					  
-					  // cart.json ÆÄÀÏ ÀĞ±â
+					  // cart.json íŒŒì¼ ì½ê¸°
 					  Object object2 = parser.parse(new FileReader("cart.json"));
 					  
-			    	  // Object¿¡¼­ JSONArray·Î º¯°æ
+			    	  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 			    	  cart_array = (JSONArray) object2;
 			    	  
-			    	  // JSONArray(Àå¹Ù±¸´Ï)¿¡ »óÇ° Ãß°¡
+			    	  // JSONArray(ì¥ë°”êµ¬ë‹ˆ)ì— ìƒí’ˆ ì¶”ê°€
 			    	  cart_array.add(obj);
 			    	  
-					  // cart.json ÆÄÀÏ¿¡ ÀúÀå
+					  // cart.json íŒŒì¼ì— ì €ì¥
 					  try {
 				           FileWriter file = new FileWriter("cart.json", false);
 				           file.write(cart_array.toJSONString());
@@ -55,7 +55,7 @@ public class Cart {
 				  }
 			  }
 		  }
-		  // ¿¹¿Ü Ã³¸®
+		  // ì˜ˆì™¸ ì²˜ë¦¬
 		catch (FileNotFoundException e) { e.printStackTrace(); } 
 		catch (IOException e) { e.printStackTrace(); } 
 		catch (ParseException e) { e.printStackTrace(); }
@@ -63,22 +63,22 @@ public class Cart {
 	
 	public static void output() {
 		 try {
-	    	  // json ÆÄÀÏ ÀĞ±â
+	    	  // json íŒŒì¼ ì½ê¸°
 	    	  Object object = parser.parse(new FileReader("cart.json"));
 	    	  
-	    	  // Object¿¡¼­ JSONArray·Î º¯°æ
+	    	  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 	    	  cart_array = (JSONArray) object;
 	    	  
-	    	  // for¹®À¸·Î ÀüÃ¼ »óÇ° ¸ñ·Ï Ãâ·Â
+	    	  // forë¬¸ìœ¼ë¡œ ì „ì²´ ìƒí’ˆ ëª©ë¡ ì¶œë ¥
 	    	  for (int i=0; i<cart_array.size(); i++) {
 		            JSONObject obj = (JSONObject) cart_array.get(i);
-		            System.out.print("¾ÆÀÌµğ: " + obj.get("id") + "\t");
-		            System.out.print("ÀÌ¸§: " + obj.get("productName") + "\t");
-		            System.out.print("°¡°İ: " + obj.get("price") + "\t");
-		            System.out.println("¼ö·®: " + obj.get("amount") + "\t");
+		            System.out.print("ì•„ì´ë””: " + obj.get("id") + "\t");
+		            System.out.print("ì´ë¦„: " + obj.get("productName") + "\t");
+		            System.out.print("ê°€ê²©: " + obj.get("price") + "\t");
+		            System.out.println("ìˆ˜ëŸ‰: " + obj.get("amount") + "\t");
 		      }
 		  }
-	      // ¿¹¿Ü Ã³¸®
+	      // ì˜ˆì™¸ ì²˜ë¦¬
 	      catch (FileNotFoundException e) { e.printStackTrace(); } 
 	      catch (IOException e) { e.printStackTrace(); } 
 	      catch (ParseException e) { e.printStackTrace(); }
@@ -87,23 +87,23 @@ public class Cart {
 	
 	public static void delete() {
 		try {
-			  // json ÆÄÀÏ ÀĞ±â
+			  // json íŒŒì¼ ì½ê¸°
 			  Object object = parser.parse(new FileReader("cart.json"));
 			  
-			  // Object¿¡¼­ JSONArray·Î º¯°æ
+			  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 			  cart_array = (JSONArray) object;
 			  
-			  // »èÁ¦ÇÒ »óÇ°ÀÇ id ÀÔ·Â
-			  System.out.println("»èÁ¦ÇÒ »óÇ°ÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			  // ì‚­ì œí•  ìƒí’ˆì˜ id ì…ë ¥
+			  System.out.println("ì‚­ì œí•  ìƒí’ˆì˜ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			  String name = scanner.next();
 			  
-			  // for¹®À¸·Î ÀüÃ¼ Å½»öÇÏ¿© ÀÔ·Â¹ŞÀº id¿Í ÀÏÄ¡ÇÏ´Â »óÇ° Á¦°Å
+			  // forë¬¸ìœ¼ë¡œ ì „ì²´ íƒìƒ‰í•˜ì—¬ ì…ë ¥ë°›ì€ idì™€ ì¼ì¹˜í•˜ëŠ” ìƒí’ˆ ì œê±°
 			  for (int i=0; i<cart_array.size(); i++) {
 				  JSONObject obj = (JSONObject) cart_array.get(i);
 				  if(obj.get("productName").equals(name)) {
-					  System.out.println(obj.get("productName") + " »óÇ°ÀÌ Á¦°ÅµÇ¾ú½À´Ï´Ù.");
+					  System.out.println(obj.get("productName") + " ìƒí’ˆì´ ì œê±°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 					  cart_array.remove(i);
-					  // json ÆÄÀÏ¿¡ ÀúÀå
+					  // json íŒŒì¼ì— ì €ì¥
 					  try {
 				           FileWriter file = new FileWriter("cart.json", false);
 				           file.write(cart_array.toJSONString());
@@ -116,7 +116,7 @@ public class Cart {
 				  }
 			  }
 		  }
-		  // ¿¹¿Ü Ã³¸®
+		  // ì˜ˆì™¸ ì²˜ë¦¬
 		catch (FileNotFoundException e) { e.printStackTrace(); } 
 		catch (IOException e) { e.printStackTrace(); } 
 		catch (ParseException e) { e.printStackTrace(); }

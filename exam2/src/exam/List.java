@@ -12,27 +12,30 @@ public class List {
 	static JSONArray array = new JSONArray();
 	static JSONParser parser = new JSONParser();
 	
+	
+	
+	
 	public static void input() {
 		JSONObject watch = new JSONObject();
 		
-		// »óÇ° Á¤º¸ ÀÔ·Â
+		// ìƒí’ˆ ì •ë³´ ì…ë ¥
 		
-        System.out.println("id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+        System.out.println("idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
         watch.put("id", scanner.next());
 		
-        System.out.println("»óÇ°¸í ÀÔ·Â");
+        System.out.println("ìƒí’ˆëª… ì…ë ¥");
 		watch.put("productName", scanner.next());
 		
-		 System.out.println("°¡°İÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		 System.out.println("ê°€ê²©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	        watch.put("price", scanner.nextInt());
 	        
-	        System.out.println("¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	        System.out.println("ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	        watch.put("amount", scanner.nextInt());
 	        
-	        // JSONArray¿¡ »óÇ° Á¤º¸°¡ ÀÔ·ÂµÈ JSONObject ÀÔ·Â
+	        // JSONArrayì— ìƒí’ˆ ì •ë³´ê°€ ì…ë ¥ëœ JSONObject ì…ë ¥
 	        array.add(watch);
 
-	        // json ÆÄÀÏ¿¡ ¾²±â
+	        // json íŒŒì¼ì— ì“°ê¸°
 	        try {
 	           FileWriter file = new FileWriter("product_list.json", false);
 	           file.write(array.toJSONString());
@@ -45,37 +48,36 @@ public class List {
 		   
 		}
 	
-		
-		/**
-	    * @fn : output
-	    * @brief : ½Ã°è»óÇ° µî·Ï 
-	    * @details : JSON À» »ç¿ëÇÏ¿© °¢°¢ ÇØ´çÇÏ´Â ÀÔ·Â°ªÀ» ¹Ş°í ¸®½ºÆ®¿¡ µ¤¾î¾²±â Çü½Ä
-	    * @author : ÀÓÁ¤¿ì(jwlim1210@gmail.com)
-	    * @date : 2021-06-10 (11½Ã33ºĞ)
-	    * @param :   id = »óÇ° id ,productName = »óÇ° ÀÌ¸§, price = »óÇ°ÀÇ °¡°İ, amount = »óÇ° ¼ö·®
-	    * @remark : ¼öÁ¤ÀÌÀ¯[ÀÓÁ¤¿ì , 2021-06-10 (15½Ã55ºĞ)]
-	    * 			ÇÊ¿ä¼º[ÀÓÁ¤¿ì,  2021-06-10 (15½Ã55ºĞ)] output ÇÔ¼öÀÇ ÁÖ¼® ¼öÁ¤
-	    */
-	
+	/**
+	 * @fn : output
+	 * @brief : ì‹œê³„ìƒí’ˆ ë“±ë¡ 
+	 * @details : JSON ì„ ì‚¬ìš©í•˜ì—¬ ê°ê° í•´ë‹¹í•˜ëŠ” ì…ë ¥ê°’ì„ ë°›ê³  ë¦¬ìŠ¤íŠ¸ì— ë®ì–´ì“°ê¸° í˜•ì‹
+	 * @author : ì„ì •ìš°(jwlim1210@gmail.com)
+	 * @date : 2021-06-10 (11ì‹œ33ë¶„)
+	 * @param :   id = ìƒí’ˆ id ,productName = ìƒí’ˆ ì´ë¦„, price = ìƒí’ˆì˜ ê°€ê²©, amount = ìƒí’ˆ ìˆ˜ëŸ‰
+	 * @remark  ìˆ˜ì •ì´ìœ : ì½”ë”©ë§Œìˆìœ¼ë©´ ì½”ë”©ì„ ì´í•´í•˜ëŠ”ë° ì‹œê°„ì´ ì¡°ê¸ˆ ê±¸ë¦¬ê¸° ë•Œë¬¸ì´ë‹¤ (ì„ì •ìš°, 2021-06-10 (15ì‹œ33ë¶„))
+	 * 			í•„ìš”ì„± : outputì„ ì¢€ ë” í•œëˆˆì— ë³¼ìˆ˜ìˆê²Œ í•˜ê¸° ìœ„í•´ (ì„ì •ìš°, 2021-06-10 (15ì‹œ33ë¶„))
+	 */
+
 		public static void output() {
 		      try {
-		    	  // json ÆÄÀÏ ÀĞ±â
+		    	  // json íŒŒì¼ ì½ê¸°
 		    	  Object object = parser.parse(new FileReader("product_list.json"));
 		    	  
-		    	  // Object¿¡¼­ JSONArray·Î º¯°æ
+		    	  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 		    	  array = (JSONArray) object;
 		    	  
-		    	  // for¹®À¸·Î ÀüÃ¼ »óÇ° ¸ñ·Ï Ãâ·Â
+		    	  // forë¬¸ìœ¼ë¡œ ì „ì²´ ìƒí’ˆ ëª©ë¡ ì¶œë ¥
 		    	  for (int i=0; i<array.size(); i++) {
 			            JSONObject obj = (JSONObject) array.get(i);
-			            System.out.print("¾ÆÀÌµğ: " + obj.get("id") + "\t");
-			            System.out.print("ÀÌ¸§: " + obj.get("productName") + "\t");
-			            System.out.print("°¡°İ: " + obj.get("price") + "\t");
-			            System.out.println("¼ö·®: " + obj.get("amount") + "\t");
+			            System.out.print("ì•„ì´ë””: " + obj.get("id") + "\t");
+			            System.out.print("ì´ë¦„: " + obj.get("productName") + "\t");
+			            System.out.print("ê°€ê²©: " + obj.get("price") + "\t");
+			            System.out.println("ìˆ˜ëŸ‰: " + obj.get("amount") + "\t");
 			         }
 			         
 			      }
-		      // ¿¹¿Ü Ã³¸®
+		      // ì˜ˆì™¸ ì²˜ë¦¬
 		      catch (FileNotFoundException e) { e.printStackTrace(); } 
 		      catch (IOException e) { e.printStackTrace(); } 
 		      catch (ParseException e) { e.printStackTrace(); }
@@ -84,23 +86,23 @@ public class List {
 
 		public static void delete() {
 			try {
-				  // json ÆÄÀÏ ÀĞ±â
+				  // json íŒŒì¼ ì½ê¸°
 				  Object object = parser.parse(new FileReader("product_list.json"));
 				  
-				  // Object¿¡¼­ JSONArray·Î º¯°æ
+				  // Objectì—ì„œ JSONArrayë¡œ ë³€ê²½
 				  array = (JSONArray) object;
 				  
-				  // »èÁ¦ÇÒ »óÇ°ÀÇ id ÀÔ·Â
-				  System.out.println("»èÁ¦ÇÒ »óÇ°ÀÇ id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				  // ì‚­ì œí•  ìƒí’ˆì˜ id ì…ë ¥
+				  System.out.println("ì‚­ì œí•  ìƒí’ˆì˜ idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				  String productId = scanner.next();
 				  
-				  // for¹®À¸·Î ÀüÃ¼ Å½»öÇÏ¿© ÀÔ·Â¹ŞÀº id¿Í ÀÏÄ¡ÇÏ´Â »óÇ° Á¦°Å
+				  // forë¬¸ìœ¼ë¡œ ì „ì²´ íƒìƒ‰í•˜ì—¬ ì…ë ¥ë°›ì€ idì™€ ì¼ì¹˜í•˜ëŠ” ìƒí’ˆ ì œê±°
 				  for (int i=0; i<array.size(); i++) {
 					  JSONObject obj = (JSONObject) array.get(i);
 					  if(obj.get("id").equals(productId)) {
-						  System.out.println(obj.get("productName") + " »óÇ°ÀÌ Á¦°ÅµÇ¾ú½À´Ï´Ù.");
+						  System.out.println(obj.get("productName") + " ìƒí’ˆì´ ì œê±°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 						  array.remove(i);
-						  // json ÆÄÀÏ¿¡ ÀúÀå
+						  // json íŒŒì¼ì— ì €ì¥
 						  try {
 					           FileWriter file = new FileWriter("product_list.json", false);
 					           file.write(array.toJSONString());
@@ -113,7 +115,7 @@ public class List {
 					  }
 				  }
 			  }
-			  // ¿¹¿Ü Ã³¸®
+			  // ì˜ˆì™¸ ì²˜ë¦¬
 			catch (FileNotFoundException e) { e.printStackTrace(); } 
 			catch (IOException e) { e.printStackTrace(); } 
 			catch (ParseException e) { e.printStackTrace(); }
