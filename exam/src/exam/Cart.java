@@ -16,6 +16,13 @@ public class Cart {
 	
 
 	public static void input() {
+		/* 
+		 * @fn input
+		 * @breif 장바구니에 상품 추가
+		 * @details json파일을 호출하고 입력받은 이름의 상품 검색 후 cart.json 파일에 저장
+		 * @author 박민지(zxcm0010@gmail.com) 
+		 * @date 2021.06.10.THU
+		 */
 		try {
 			  // json 파일 읽기
 			  Object object = parser.parse(new FileReader("product_list.json"));
@@ -62,6 +69,13 @@ public class Cart {
 	}
 	
 	public static void output() {
+		/*
+		 * @fn output
+		 * @brief 상품 목록 출력
+		 * @details cart.json 파일을 읽어와 상품 목록 출력
+		 * @author 박민지(zxcm0010@gmail.com)
+		 * @date 2021.06.10
+		 */
 		 try {
 	    	  // json 파일 읽기
 	    	  Object object = parser.parse(new FileReader("cart.json"));
@@ -86,6 +100,13 @@ public class Cart {
 	}
 	
 	public static void delete() {
+		/*
+		 * @fn delete
+		 * @brief 장바구니 목록에 있는 상품 삭제
+		 * @details cart.json 파일을 읽어와 삭제할 상품의 이름을 받은 후 remove를 이용하여 상품 삭제
+		 * @author 박민지(zxcm0010@gmail.com)
+		 * @date 2021.06.10
+		 */
 		try {
 			  // json 파일 읽기
 			  Object object = parser.parse(new FileReader("cart.json"));
