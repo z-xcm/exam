@@ -1,13 +1,11 @@
 /** 
  @fn login
- @brief 함수의 설명 (What) 이름 설정
- @details 동작과정 설명 (How) name 변수에 이름 설정
- @author Name(Name@tistory.com) (Who) 남수만(sumannam@gmail.com)
- @date 함수 생성 날짜 (When)
- @return 리턴값에 대한설명(type 상품의 이름)
- @param 함수의 인자 설명(name: 상품의 이름)
- @remark  수정이유[작성자; 날짜2]
-					필요성[작성자; 날짜1] (Why)
+ @brief 회원가입 후 로그인
+ @details 회원가입후 입력받은 비밀번호를 암호화하여 저장하고 로그인 할때 복호화 해서 검증후 로그인
+ @author 박찬우(meary@outlook.kr)
+ @date 2021-06-10 PM 3:30
+ @return SHA512 로 암호화된 비밀번호를 리턴
+ @remark 관리자 모드로 진입하기에 로그인 시스템이 필요함
 */
 
 
