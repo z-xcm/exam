@@ -80,6 +80,15 @@ public class List {
 		      catch (ParseException e) { e.printStackTrace(); }
 		      
 		   }
+	
+		/**
+          	  * @fn : delete
+		  * @brief : 시계상품 삭제
+		  * @details : JSON 을 사용하여 각각 해당하는 입력값을 받고 리스트에 덮어쓰기 형식
+		  * @author : 이승훈(dltmdgns2828@naver.com)
+		  * @date : 2021-06-10 (16시00분)
+		  * @param :   id = 상품 id ,productName = 상품 이름, price = 상품의 가격, amount = 상품 수량
+		  */
 
 		public static void delete() {
 			try {
